@@ -55,13 +55,12 @@ public class Student {
 		return finalScore;
 	}
 
-	@Override
+		@Override
 	public String toString() {
 		if (status.equals(StatusAluno.PASS)) {
 			return "Student [name=" + name + ", FINAL GRADE=" + Calculate() + ", status=" + status + "]";
 		} else if (this.status.equals(StatusAluno.FAILED)) {
 			status += String.format(" MISSING %.2f POINTS", 60 -Calculate());
-			return "Student [name=" + name + ", FINAL GRADE=" + Calculate() + ", status=" + status + "]";
 		}
 		return "Student [name=" + name + ", FINAL GRADE=" + Calculate() + ", status=" + status + "]";
 	}
