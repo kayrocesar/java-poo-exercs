@@ -78,7 +78,7 @@ public class Worker {
 
 			calendar.setTime(hourContract.getDate());
 			int h_year = calendar.get(Calendar.YEAR);
-			int h_month = calendar.get(Calendar.MONTH);
+			int h_month = 1 + calendar.get(Calendar.MONTH);
 
 			if (h_year == year && h_month == month) {
 				totalValueContracts += hourContract.totalValue();
