@@ -47,9 +47,7 @@ public class Program {
 		c.withdraw(50);
 		
 		System.out.println(a.getBalance());
-		
 		System.out.println(b.getBalance());
-		
 		System.out.println(c.getBalance());
 	
 
