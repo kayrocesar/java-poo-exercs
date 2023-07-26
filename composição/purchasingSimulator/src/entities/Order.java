@@ -1,5 +1,6 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,9 +19,9 @@ public class Order {
 
 	}
 
-	public Order(Date moment, OrderStatus status, Client client) {
-		this.moment = moment;
-		this.status = status;
+	public Order(Client client) {
+		this.moment = new Date();
+		this.status = OrderStatus.PROCESSING;
 		this.client = client;
 	}
 
@@ -62,6 +63,25 @@ public class Order {
 			sum += orderItem.subTotal();
 		}
 		return sum;
+	}
+
+	@Override
+	public String toString() {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		String item;
+		Double sum = 0.0;
+		item = "ORDER SUMMARY: " + "\nOrder moment: " + moment + "\nOrder status: " + status + "\n" + "\nClient: \n"
+				+ client.getName() + "(" + dateFormat.format(moment) + ")" + " - " + client.getEmail()
+				+ "\nOrder items: \n";
+
+		for (OrderItem orderItem : items) {
+			item += "Name: " +orderItem.getProduct().getName() + ", $" + orderItem.getProduct().getPrice() + ", Quantity: "
+					+ orderItem.getQuantity() + ", Subtotal: " + orderItem.subTotal() + "\n";
+			sum += orderItem.subTotal();
+		}
+		item += "Total price: " + sum;
+
+		return item;
 	}
 
 }

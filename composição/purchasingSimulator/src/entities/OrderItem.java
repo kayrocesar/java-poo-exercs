@@ -11,7 +11,6 @@ public class OrderItem {
 		
 	}
 	
-
 	public OrderItem(int quantity, double price, Product product) {
 		this.quantity = quantity;
 		this.price = price;
