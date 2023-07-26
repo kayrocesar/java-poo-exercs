@@ -11,10 +11,9 @@ public class Program {
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
-		Account acc = new Account(1001,"Alex",0.0);
-		BusinessAccount bacc= new BusinessAccount(1002, "Maria", 0, 500.0);
 		
 		
+		/*
 		//UPCASTING (SUPERCLASSE = NEW CLASSE FILHO)
 		
 		Account acc1 = bacc;
@@ -38,7 +37,20 @@ public class Program {
 	    	acc5.updateBalance();
 	    	System.out.println("Update");
 	    }
-	    System.out.println("testes");
+	    */
+		Account a =new Account(1001, "Alex", 500);
+		Account b =new SavingsAccount(1002, "Ana", 500,0.01);
+		Account c =new BusinessAccount(1003, "Artur", 500,200);
+		
+		a.withdraw(50);
+		b.withdraw(50);
+		c.withdraw(50);
+		
+		System.out.println(a.getBalance());
+		
+		System.out.println(b.getBalance());
+		
+		System.out.println(c.getBalance());
 	
 
 	}
