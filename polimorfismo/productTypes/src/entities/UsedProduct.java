@@ -28,7 +28,7 @@ public class UsedProduct extends Product{
 
     @Override
 	public String priceTag() {
-    	SimpleDateFormat simpleDate = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat simpleDate = new SimpleDateFormat("dd/MM/yyyy");
     	
 		return super.priceTag() + " (used) - Manufacture date: " + simpleDate.format(manufactureDate);
 	}
